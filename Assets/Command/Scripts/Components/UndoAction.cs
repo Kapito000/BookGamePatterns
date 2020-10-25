@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UndoAction
+public abstract class UndoAction
 {
+    public abstract void Undo(); // Логика выполнения действия.
 }
