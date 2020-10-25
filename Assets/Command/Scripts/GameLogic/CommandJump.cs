@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class CommandJump : Command
 {
-    public CommandJump(Actor actor) : base(actor) { }
+    UndoJump _undo;
 
-    public override void Execute(Actor actor)
+    public CommandJump(Actor actor) : base(actor) 
+    {
+        _undo = new UndoJump(this.actor);
+    }
+
+    public override void Execute(/*Actor actor*/)
     {
         if (actor.jump == null) return;
 
@@ -15,6 +20,6 @@ public class CommandJump : Command
 
     public override void Undo()
     {
-
+        _undo.Undo();
     }
 }

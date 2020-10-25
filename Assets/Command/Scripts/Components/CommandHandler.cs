@@ -12,13 +12,13 @@ public class CommandHandler : MonoBehaviour
     void Jump()
     {
         var jump = new CommandJump(_actor);
-        jump.Execute(_actor);
+        jump.Execute(/*_actor*/);
         _commandRoster.AddCommand(jump);
     }
     void MoveTowards()
     {
         var moveTowards = new CommandMoveForward(_actor);
-        moveTowards.Execute(_actor);
+        moveTowards.Execute(/*_actor*/);
         _commandRoster.AddCommand(moveTowards);
     }
 

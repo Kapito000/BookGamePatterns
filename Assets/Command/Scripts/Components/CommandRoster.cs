@@ -5,7 +5,7 @@ using UnityEngine;
 public class CommandRoster : MonoBehaviour
 {
     [SerializeField] List<Command> _commands;
-    List<Command> commands => _commands;
+    public List<Command> commands => _commands;
 
     public CommandRoster()
     {

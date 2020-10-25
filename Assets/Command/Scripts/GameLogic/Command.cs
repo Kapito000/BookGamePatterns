@@ -13,7 +13,7 @@ public abstract class Command
         _actor = actor;
     }
 
-    public abstract void Execute(Actor actor);
+    public abstract void Execute(/*Actor actor*/);
 
     public abstract void Undo();
 }
