@@ -19,18 +19,27 @@ public class InputCommand
         _moveForwardCommand = moveForwardCommand;
     }
 
-    public void Jump()
+    public Command CallCommand()
     {
-        if (Input.GetKey(_keyJump))
-        {
-            _jumpCommand.Execute();
-        }
+        Command command;
+
+        command = Jump();
+        if(command == null) return null;
+
+        command = MoveForward();
+        if (command == null) return null;
+
+        return command;
     }
-    public void MoveForward()
+
+    Command Jump()
     {
-        if (Input.GetKey(_keyMoveForward))
-        {
-            _moveForwardCommand.Execute();
-        }
+        if (!Input.GetKey(_keyJump)) return null;
+        return _jumpCommand;
+    }
+    Command MoveForward()
+    {
+        if (!Input.GetKey(_keyMoveForward)) return null;
+        return _moveForwardCommand;
     }
 }

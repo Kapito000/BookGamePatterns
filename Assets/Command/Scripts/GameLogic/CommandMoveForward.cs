@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 class CommandMoveForward : Command
 {
-    public CommandMoveForward(Action action) : base(action) { }
+    //public CommandMoveForward(Action action) : base(action) { }
 
     public override void Undo()
     {

@@ -4,15 +4,19 @@ using UnityEngine;
 
 public abstract class Command
 {
-    Action _action;
+    //Action _action;
 
-    public Command(Action action)
+    //public Command(Action action)
+    //{
+    //    _action = action;
+    //}
+    //public void Execute()
+    //{
+    //    _action.Do();
+    //}
+    public void Execute(Action action)
     {
-        _action = action;
-    }
-    public void Execute()
-    {
-        _action.Do();
+        action.Do();
     }
 
     public abstract void Undo();

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CommandJump : Command
 {
-    public CommandJump(Action action) : base(action) { }
+    //public CommandJump(Action action) : base(action) { }
 
     public override void Undo()
     {

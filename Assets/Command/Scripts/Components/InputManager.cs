@@ -14,13 +14,16 @@ public class InputManager : MonoBehaviour
 
     void InputCollect()
     {
-        _inputCommand.Jump();
-        _inputCommand.MoveForward();
+        var command = _inputCommand.CallCommand();
+
+        if (command == null) return;
+
+        command.Execute();
     }
 
     private void Awake()
     {
-        _inputCommand = new InputCommand(_keyJump, _keyMoveForward, new CommandJump(_jump), new CommandMoveForward(_moveTowards));
+        _inputCommand = new InputCommand(_keyJump, _keyMoveForward, new CommandJump(), new CommandMoveForward());
     }
 
     private void Update()
