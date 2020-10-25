@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Action : MonoBehaviour
+public abstract class ActionActor : MonoBehaviour
 {
     public abstract void Do();
 }

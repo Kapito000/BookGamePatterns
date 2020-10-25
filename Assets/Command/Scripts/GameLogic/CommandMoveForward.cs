@@ -1,15 +1,25 @@
-﻿using System;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using UnityEngine;
 
 class CommandMoveForward : Command
 {
-    //public CommandMoveForward(Action action) : base(action) { }
+    [SerializeField] Vector3 _beforPosition;
+
+    public CommandMoveForward(Actor actor) : base(actor)
+    {
+        _beforPosition = this.actor.transform.position;
+    }
+
+    public override void Execute(Actor actor)
+    {
+        if (actor.moveTowards == null) return;
+
+        actor.moveTowards.Do();
+    }
 
     public override void Undo()
     {
-        
+
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-class MoveTowards : Action
+public class MoveTowards : ActionActor
 {
     public override void Do()
     {

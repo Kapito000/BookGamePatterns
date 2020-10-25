@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CommandRoster
+public class CommandRoster : MonoBehaviour
 {
-    List<Command> _commands;
-    List<Command> Commands => _commands;
+    [SerializeField] List<Command> _commands;
+    List<Command> commands => _commands;
 
     public CommandRoster()
     {

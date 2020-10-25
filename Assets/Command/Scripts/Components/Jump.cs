@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-class Jump : Action
+public class Jump : ActionActor
 {
     public override void Do()
     {

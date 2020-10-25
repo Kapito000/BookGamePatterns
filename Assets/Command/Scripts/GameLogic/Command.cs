@@ -1,23 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Command
 {
-    //Action _action;
+    Actor _actor;
+    protected Actor actor => _actor;
 
-    //public Command(Action action)
-    //{
-    //    _action = action;
-    //}
-    //public void Execute()
-    //{
-    //    _action.Do();
-    //}
-    public void Execute(Action action)
+    public Command(Actor actor)
     {
-        action.Do();
+        _actor = actor;
     }
+
+    public abstract void Execute(Actor actor);
 
     public abstract void Undo();
 }
